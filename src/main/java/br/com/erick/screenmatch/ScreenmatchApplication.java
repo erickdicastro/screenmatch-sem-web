@@ -1,5 +1,6 @@
 package br.com.erick.screenmatch;
 
+import br.com.erick.screenmatch.model.DadosEpisodio;
 import br.com.erick.screenmatch.model.DadosSerie;
 import br.com.erick.screenmatch.service.ConsumoApi;
 import br.com.erick.screenmatch.service.ConverteDados;
@@ -20,5 +21,8 @@ public class ScreenmatchApplication {
 		ConverteDados conversor = new ConverteDados();
 		DadosSerie dados = conversor.obterDados(json, DadosSerie.class);
 		System.out.println(dados);
+		json = consumoApi.obterDados("https://omdbapi.com/?t=gilmore+girls&season=1&episode=2&apikey=6585022c");
+		DadosEpisodio dadosEpisodio = conversor.obterDados(json, DadosEpisodio.class);
+		System.out.println(dadosEpisodio);
 	}
 }
