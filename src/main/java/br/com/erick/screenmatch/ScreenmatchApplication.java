@@ -1,9 +1,6 @@
 package br.com.erick.screenmatch;
 
-import br.com.erick.screenmatch.model.DadosEpisodio;
-import br.com.erick.screenmatch.model.DadosSerie;
-import br.com.erick.screenmatch.service.ConsumoApi;
-import br.com.erick.screenmatch.service.ConverteDados;
+import br.com.erick.screenmatch.principal.Principal;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -13,16 +10,7 @@ public class ScreenmatchApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ScreenmatchApplication.class, args);
 
-		var consumoApi = new ConsumoApi();
-		var json = consumoApi.obterDados("https://www.omdbapi.com/?t=gilmore+girls&apikey=6585022c");
-		System.out.println(json);
-		//json = consumoApi.obterDados("https://coffee.alexflipnote.dev/random.json");
-		//System.out.println(json);
-		ConverteDados conversor = new ConverteDados();
-		DadosSerie dados = conversor.obterDados(json, DadosSerie.class);
-		System.out.println(dados);
-		json = consumoApi.obterDados("https://omdbapi.com/?t=gilmore+girls&season=1&episode=2&apikey=6585022c");
-		DadosEpisodio dadosEpisodio = conversor.obterDados(json, DadosEpisodio.class);
-		System.out.println(dadosEpisodio);
+		Principal principal = new Principal();
+		principal.exibeMenu();
 	}
 }
