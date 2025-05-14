@@ -1,8 +1,6 @@
 package br.com.erick.screenmatch.model;
 
-import br.com.erick.screenmatch.service.ConsultaChatGPT;
 import br.com.erick.screenmatch.service.traducao.ConsultaMyMemory;
-import com.fasterxml.jackson.annotation.JsonAlias;
 
 import java.util.OptionalDouble;
 
