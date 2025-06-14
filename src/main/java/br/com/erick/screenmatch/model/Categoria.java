@@ -5,13 +5,12 @@ public enum Categoria {
     ROMANCE("Romance", "Romance"),
     COMEDIA("Comedy", "Comédia"),
     DRAMA("Drama", "Drama"),
-    CRIME("Crime", "Crime"),
-    TERROR("Terror", "Terror");
+    CRIME("Crime", "Crime");
 
     private String categoriaOmdb;
     private String categoriaPortugues;
 
-    Categoria(String categoriaOmdb, String categoriaPortugues) {
+    Categoria(String categoriaOmdb, String categoriaPortugues){
         this.categoriaOmdb = categoriaOmdb;
         this.categoriaPortugues = categoriaPortugues;
     }
